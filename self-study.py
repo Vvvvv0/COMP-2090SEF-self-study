@@ -118,6 +118,3 @@ print("\nMax-heap:", max_heap) # Max-heap: [8, 5, 7, 1, 3]
 print("Peek max:", max_heap.peek()) # Peek max: 8
 print("Extract max:", max_heap.extract()) # Extract max: 8
 print("Heap after extraction:", max_heap, '\n') # Heap after extraction: [7, 5, 3, 1]
-
-
-
