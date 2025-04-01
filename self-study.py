@@ -40,6 +40,13 @@ class Heap:
             self.heap[i], self.heap[self.parent(i)] = self.heap[self.parent(i)], self.heap[i]
             i = self.parent(i)
 
+    def heapify(self, arr):
+        """Build a heap from an array"""
+        self.heap = arr.copy()
+        # Start from the last non-leaf node and sift down each
+        for i in range(len(self.heap) // 2 - 1, -1, -1):
+            self.bubble_down(i)
+
     def extract(self):
         """
         Remove and return the min (min-heap) or max (max-heap) element
@@ -91,13 +98,6 @@ class Heap:
     def is_empty(self):
         """Check if the heap is empty"""
         return len(self.heap) == 0
-    
-    def heapify(self, arr):
-        """Build a heap from an array"""
-        self.heap = arr.copy()
-        # Start from the last non-leaf node and sift down each
-        for i in range(len(self.heap) // 2 - 1, -1, -1):
-            self.bubble_down(i)
         
     def __str__(self):
         return str(self.heap)
