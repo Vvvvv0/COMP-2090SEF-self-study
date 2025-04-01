@@ -103,17 +103,17 @@ class Heap:
         return str(self.heap)
     
 min_heap = Heap('min')
-min_heap.insert(7)
-min_heap.insert(3)
-min_heap.insert(8)
-min_heap.insert(1)
-min_heap.insert(5)
+min_heap.insert(7) #[7]
+min_heap.insert(3) #Compare[3, 7] -> 3 < 7, exchange
+min_heap.insert(8) #Compare[3, 7, 8] -> 8 > 3, no change
+min_heap.insert(1) #Compare[1, 3, 8, 7] -> 1 < 3, exchange
+min_heap.insert(5) #Compare[1, 3, 5, 8, 7] -> 5 > 3, exchange
 print("\nMin-heap:", min_heap) # Min-heap: [1, 3, 8, 7, 5]
 print("Extract min:", min_heap.extract()) # Extract min: 1
 print("Heap after extraction:", min_heap) # Heap after extraction: [3, 5, 8, 7]
 
 max_heap = Heap('max')
-max_heap.heapify([7, 3, 8, 1, 5])
+max_heap.heapify([7, 3, 8, 1, 5]) """ Compare -> 5 > 3, exchange -> [7, 5, 8, 1, 3] Compare -> 8 > 7, exchange -> [8, 5, 7, 1, 3] """
 print("\nMax-heap:", max_heap) # Max-heap: [8, 5, 7, 1, 3]
 print("Peek max:", max_heap.peek()) # Peek max: 8
 print("Extract max:", max_heap.extract()) # Extract max: 8
