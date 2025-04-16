@@ -1,3 +1,7 @@
+"""
+View how heap used in game for result visualization (which is used to show the program logic, cannot be used for testing)
+"""
+
 import matplotlib.pyplot as plt
 import heapq
 
